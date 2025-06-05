@@ -1,55 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ihee Lab Audio - KR/EN</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* ❗스크롤 제거 */
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h2 {
+      margin: 10px;
+      font-size: 1.1em;
+      line-height: 1.3em;
+      word-break: keep-all;
+    }
+
     .icon {
-      font-size: 28px;
+      font-size: 1.5em;
       cursor: pointer;
       vertical-align: middle;
-      margin: 0 5px;
+      margin-right: 5px;
     }
 
     .download-inline {
       text-decoration: none;
-      font-size: 24px;
+      font-size: 1.3em;
       vertical-align: middle;
       margin-left: 5px;
     }
 
-    h2 {
-      margin-bottom: 10px;
+    audio {
+      display: none;
     }
   </style>
 </head>
-<body style="text-align:center; margin-top: 50px; font-family:sans-serif;">
+<body>
 
-  <!-- 🇰🇷 한글 문구 -->
-  <h2>
-    <span id="speaker-kr" class="icon">🔊</span>
-    오디오로 소리 들어보기 (일반인을 위한 설명)
-    <a href="Ihee Lab(kor).mp3" download class="download-inline" title="오디오 다운로드">⬇️</a>
-  </h2>
+  <div class="container">
 
-  <!-- 🇺🇸 영문 문구 -->
-  <h2>
-    <span id="speaker-en" class="icon">🔊</span>
-    Listen to Introduction (for a general audience)
-    <a href="Ihee Lab(eng).mp3" download class="download-inline" title="Download Audio">⬇️</a>
-  </h2>
+    <!-- 🇰🇷 한글 -->
+    <h2>
+      <span id="speaker-kr" class="icon">🔊</span>
+      오디오로 소리 들어보기 (일반인을 위한 설명)
+      <a href="Ihee Lab(kor).mp3" download class="download-inline" title="오디오 다운로드">⬇️</a>
+    </h2>
 
-  <!-- 오디오 요소 (두 개 분리) -->
+    <!-- 🇺🇸 영문 -->
+    <h2>
+      <span id="speaker-en" class="icon">🔊</span>
+      Listen to Introduction (for a general audience)
+      <a href="Ihee Lab(eng).mp3" download class="download-inline" title="Download Audio">⬇️</a>
+    </h2>
+
+  </div>
+
+  <!-- 오디오 파일 -->
   <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
   <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
 
-  <!-- 스크립트: 각 이모지에 맞게 오디오 재생 -->
+  <!-- JS -->
   <script>
-    document.getElementById('speaker-kr').addEventListener('click', function () {
+    document.getElementById('speaker-kr').addEventListener('click', () => {
       document.getElementById('audio-kr').play();
     });
 
-    document.getElementById('speaker-en').addEventListener('click', function () {
+    document.getElementById('speaker-en').addEventListener('click', () => {
       document.getElementById('audio-en').play();
     });
   </script>

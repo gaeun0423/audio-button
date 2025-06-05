@@ -12,27 +12,26 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
       font-family: sans-serif;
 
       color: white;
+      overflow-x: hidden;
     }
 
     .container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh; /* ✅ 모바일 대응 */
+      padding: 20px 10px;
       text-align: center;
-      padding: 10px;
     }
 
     h2 {
-      margin: 8px;
+      margin: 12px 0;
       font-size: 0.95em;
-      line-height: 1.2em;
+      line-height: 1.4em;
       word-break: keep-all;
     }
 
@@ -52,12 +51,13 @@
     }
 
     .speed-control {
-      margin-top: 12px;
+      margin-top: 16px;
       font-size: 0.9em;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     select {
@@ -104,7 +104,7 @@
   <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
   <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
 
-  <!-- 스크립트 -->
+  <!-- JS -->
   <script>
     const audioKR = document.getElementById('audio-kr');
     const audioEN = document.getElementById('audio-en');

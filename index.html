@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Audio Button</title>
+  <title>Ihee Lab Audio - KR/EN</title>
   <style>
     .icon {
       font-size: 28px;
@@ -17,24 +17,40 @@
       vertical-align: middle;
       margin-left: 5px;
     }
+
+    h2 {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body style="text-align:center; margin-top: 50px; font-family:sans-serif;">
 
-  <!-- 재생 이모지 + 문구 + 다운로드 이모지 (오른쪽에) -->
+  <!-- 🇰🇷 한글 문구 -->
   <h2>
-    <span id="speaker" class="icon">🔊</span>
+    <span id="speaker-kr" class="icon">🔊</span>
     오디오로 소리 들어보기 (일반인을 위한 설명)
-    <a href="your_audio.mp3" download class="download-inline" title="오디오 다운로드">⬇️</a>
+    <a href="Ihee Lab(kor).mp3" download class="download-inline" title="오디오 다운로드">⬇️</a>
   </h2>
 
-  <!-- 오디오 -->
-  <audio id="myAudio" src="your_audio.mp3"></audio>
+  <!-- 🇺🇸 영문 문구 -->
+  <h2>
+    <span id="speaker-en" class="icon">🔊</span>
+    Listen to Introduction (for a general audience)
+    <a href="Ihee Lab(eng).mp3" download class="download-inline" title="Download Audio">⬇️</a>
+  </h2>
 
-  <!-- 스크립트: 🔊 클릭 시 재생 -->
+  <!-- 오디오 요소 (두 개 분리) -->
+  <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
+  <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
+
+  <!-- 스크립트: 각 이모지에 맞게 오디오 재생 -->
   <script>
-    document.getElementById('speaker').addEventListener('click', function () {
-      document.getElementById('myAudio').play();
+    document.getElementById('speaker-kr').addEventListener('click', function () {
+      document.getElementById('audio-kr').play();
+    });
+
+    document.getElementById('speaker-en').addEventListener('click', function () {
+      document.getElementById('audio-en').play();
     });
   </script>
 

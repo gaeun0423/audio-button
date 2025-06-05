@@ -11,31 +11,25 @@
       margin: 0 5px;
     }
 
-    .download-link {
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 28px;
+    .download-inline {
       text-decoration: none;
+      font-size: 24px;
+      vertical-align: middle;
+      margin-left: 5px;
     }
   </style>
 </head>
 <body style="text-align:center; margin-top: 50px; font-family:sans-serif;">
 
-  <!-- 문구 + 재생 이모지 -->
+  <!-- 재생 이모지 + 문구 + 다운로드 이모지 (오른쪽에) -->
   <h2>
     <span id="speaker" class="icon">🔊</span>
     오디오로 소리 들어보기 (일반인을 위한 설명)
+    <a href="your_audio.mp3" download class="download-inline" title="오디오 다운로드">⬇️</a>
   </h2>
 
   <!-- 오디오 -->
   <audio id="myAudio" src="your_audio.mp3"></audio>
-
-  <!-- 다운로드 이모지만 표시 -->
-  <div>
-    <a href="your_audio.mp3" download class="download-link" title=".">
-      ⬇️
-    </a>
-  </div>
 
   <!-- 스크립트: 🔊 클릭 시 재생 -->
   <script>

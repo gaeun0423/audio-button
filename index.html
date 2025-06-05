@@ -54,6 +54,10 @@
     .speed-control {
       margin-top: 12px;
       font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
 
     select {
@@ -84,9 +88,9 @@
       <a href="Ihee Lab(eng).mp3" download class="download-inline">⬇️</a>
     </h2>
 
-    <!-- 배속 선택 -->
+    <!-- 배속 선택 (이모지 포함) -->
     <div class="speed-control">
-      🔁 Playback Speed:
+      <span class="icon">⏩</span>
       <select id="speedSelect">
         <option value="0.5">0.5x</option>
         <option value="1" selected>1x (Normal)</option>
@@ -96,7 +100,7 @@
     </div>
   </div>
 
-  <!-- 오디오 요소 -->
+  <!-- 오디오 -->
   <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
   <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
 
@@ -119,4 +123,3 @@
 
 </body>
 </html>
-

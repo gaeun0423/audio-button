@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Button</title>
+  <style>
+    img.button-img {
+      width: 80px;
+      height: auto;
+      max-width: 100%;
+      cursor: pointer;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body style="text-align:center; margin-top: 50px; font-family:sans-serif;">
+
+  <!-- 안내 문구 -->
+  <h2>🔊 오디오로 소리 들어보기 (일반인을 위한 설명)</h2>
+
+  <!-- 재생 버튼 -->
+  <img src="play_button.png" id="playBtn" class="button-img">
+
+  <!-- 오디오 -->
+  <audio id="myAudio" src="your_audio.wav"></audio>
+
+  <!-- 다운로드 버튼 -->
+  <div style="margin-top:20px;">
+    <a href="your_audio.wav" download>
+      <img src="download_button.png" alt="Download Audio" class="button-img">
+    </a>
+  </div>
+
+  <!-- 스크립트 -->
+  <script>
+    document.getElementById('playBtn').addEventListener('click', function () {
+      document.getElementById('myAudio').play();
+    });
+  </script>
+
+</body>
+</html>

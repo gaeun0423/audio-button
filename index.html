@@ -15,7 +15,8 @@
       height: 100%;
       overflow: hidden;
       font-family: sans-serif;
-      color: white; /* 전체 글자 색 흰색 */
+      background-color: black;
+      color: white;
     }
 
     .container {
@@ -33,28 +34,22 @@
       font-size: 0.95em;
       line-height: 1.2em;
       word-break: keep-all;
-      color: white; /* 개별 설정 (선택사항) */
-    }
-
-    .icon {
-      font-size: 1.3em;
-      cursor: pointer;
-      vertical-align: middle;
-      margin-right: 4px;
       color: white;
     }
 
+    .icon,
     .download-inline {
-      text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1em; /* ✅ 글자에 딱 맞게 */
       vertical-align: middle;
-      margin-left: 4px;
+      cursor: pointer;
+      margin: 0 5px;
       color: white;
+      text-decoration: none;
     }
 
-    .download-inline:hover,
-    .icon:hover {
-      color: #ccc; /* 살짝 밝아지게 효과 */
+    .icon:hover,
+    .download-inline:hover {
+      color: #ccc;
     }
 
     audio {
@@ -82,7 +77,7 @@
 
   </div>
 
-  <!-- 오디오 -->
+  <!-- 오디오 파일 -->
   <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
   <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
 

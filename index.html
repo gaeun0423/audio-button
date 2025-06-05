@@ -4,36 +4,41 @@
   <meta charset="UTF-8">
   <title>Audio Button</title>
   <style>
-    img.button-img {
-      width: 80px;
-      height: auto;
-      max-width: 100%;
+    .icon {
+      font-size: 28px;
       cursor: pointer;
-      margin: 10px;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+    .download-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 24px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body style="text-align:center; margin-top: 50px; font-family:sans-serif;">
 
-  <!-- 안내 문구 -->
-  <h2>🔊 오디오로 소리 들어보기 (일반인을 위한 설명)</h2>
+  <!-- 문구 + 재생 이모지 -->
+  <h2>
+    <span id="speaker" class="icon">🔊</span>
+    오디오로 소리 들어보기 (일반인을 위한 설명)
+  </h2>
 
-  <!-- 재생 버튼 이미지 -->
-  <img src="play_button.png" id="playBtn" class="button-img">
+  <!-- 오디오 -->
+  <audio id="myAudio" src="your_audio.mp3"></audio>
 
-  <!-- 오디오 요소 -->
-  <audio id="myAudio" src="your_audio.wav"></audio>
-
-  <!-- 다운로드 버튼 (이미지만 보임, alt 속성도 삭제 가능) -->
-  <div style="margin-top:20px;">
-    <a href="your_audio.wav" download>
-      <img src="download_button.png" class="button-img">
+  <!-- 다운로드 이모지 링크 -->
+  <div>
+    <a href="your_audio.wav" download class="download-link" title="오디오 다운로드">
+      ⬇️ 오디오 다운로드
     </a>
   </div>
 
-  <!-- 재생 기능 -->
+  <!-- 스크립트: 🔊 클릭 시 재생 -->
   <script>
-    document.getElementById('playBtn').addEventListener('click', function () {
+    document.getElementById('speaker').addEventListener('click', function () {
       document.getElementById('myAudio').play();
     });
   </script>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ihee Lab Audio - KR/EN</title>
   <style>
     * {
@@ -34,12 +34,11 @@
       font-size: 0.95em;
       line-height: 1.2em;
       word-break: keep-all;
-      color: white;
     }
 
     .icon,
     .download-inline {
-      font-size: 1em; /* ✅ 글자에 딱 맞게 */
+      font-size: 1em;
       vertical-align: middle;
       cursor: pointer;
       margin: 0 5px;
@@ -50,6 +49,16 @@
     .icon:hover,
     .download-inline:hover {
       color: #ccc;
+    }
+
+    .speed-control {
+      margin-top: 12px;
+      font-size: 0.9em;
+    }
+
+    select {
+      font-size: 0.9em;
+      padding: 4px 6px;
     }
 
     audio {
@@ -65,32 +74,49 @@
     <h2>
       <span id="speaker-kr" class="icon">🔊</span>
       오디오로 소리 들어보기 (일반인을 위한 설명)
-      <a href="Ihee Lab(kor).mp3" download class="download-inline" title="오디오 다운로드">⬇️</a>
+      <a href="Ihee Lab(kor).mp3" download class="download-inline">⬇️</a>
     </h2>
 
     <!-- 🇺🇸 영문 -->
     <h2>
       <span id="speaker-en" class="icon">🔊</span>
       Listen to Introduction (for a general audience)
-      <a href="Ihee Lab(eng).mp3" download class="download-inline" title="Download Audio">⬇️</a>
+      <a href="Ihee Lab(eng).mp3" download class="download-inline">⬇️</a>
     </h2>
 
+    <!-- 배속 선택 -->
+    <div class="speed-control">
+      🔁 Playback Speed:
+      <select id="speedSelect">
+        <option value="0.5">0.5x</option>
+        <option value="1" selected>1x (Normal)</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
   </div>
 
-  <!-- 오디오 파일 -->
+  <!-- 오디오 요소 -->
   <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
   <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
 
-  <!-- JS -->
+  <!-- 스크립트 -->
   <script>
+    const audioKR = document.getElementById('audio-kr');
+    const audioEN = document.getElementById('audio-en');
+    const speedSelect = document.getElementById('speedSelect');
+
     document.getElementById('speaker-kr').addEventListener('click', () => {
-      document.getElementById('audio-kr').play();
+      audioKR.playbackRate = parseFloat(speedSelect.value);
+      audioKR.play();
     });
 
     document.getElementById('speaker-en').addEventListener('click', () => {
-      document.getElementById('audio-en').play();
+      audioEN.playbackRate = parseFloat(speedSelect.value);
+      audioEN.play();
     });
   </script>
 
 </body>
 </html>
+

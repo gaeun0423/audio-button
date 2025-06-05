@@ -18,20 +18,20 @@
   <!-- 안내 문구 -->
   <h2>🔊 오디오로 소리 들어보기 (일반인을 위한 설명)</h2>
 
-  <!-- 재생 버튼 -->
+  <!-- 재생 버튼 이미지 -->
   <img src="play_button.png" id="playBtn" class="button-img">
 
-  <!-- 오디오 -->
+  <!-- 오디오 요소 -->
   <audio id="myAudio" src="your_audio.wav"></audio>
 
-  <!-- 다운로드 버튼 -->
+  <!-- 다운로드 버튼 (이미지만 보임, alt 속성도 삭제 가능) -->
   <div style="margin-top:20px;">
     <a href="your_audio.wav" download>
-      <img src="download_button.png" alt="Download Audio" class="button-img">
+      <img src="download_button.png" class="button-img">
     </a>
   </div>
 
-  <!-- 스크립트 -->
+  <!-- 재생 기능 -->
   <script>
     document.getElementById('playBtn').addEventListener('click', function () {
       document.getElementById('myAudio').play();

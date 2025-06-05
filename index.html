@@ -13,8 +13,10 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* 스크롤 제거 */
+      overflow: hidden;
       font-family: sans-serif;
+      background-color: black; /* 배경도 검정색으로 하면 대비 좋음 */
+      color: white; /* 전체 글자 색 흰색 */
     }
 
     .container {
@@ -29,16 +31,18 @@
 
     h2 {
       margin: 8px;
-      font-size: 0.95em; /* 글자 크기 더 줄임 */
+      font-size: 0.95em;
       line-height: 1.2em;
       word-break: keep-all;
+      color: white; /* 개별 설정 (선택사항) */
     }
 
     .icon {
-      font-size: 1.3em; /* 이모지도 약간 축소 */
+      font-size: 1.3em;
       cursor: pointer;
       vertical-align: middle;
       margin-right: 4px;
+      color: white;
     }
 
     .download-inline {
@@ -46,6 +50,12 @@
       font-size: 1.2em;
       vertical-align: middle;
       margin-left: 4px;
+      color: white;
+    }
+
+    .download-inline:hover,
+    .icon:hover {
+      color: #ccc; /* 살짝 밝아지게 효과 */
     }
 
     audio {
@@ -73,7 +83,7 @@
 
   </div>
 
-  <!-- 오디오 파일 -->
+  <!-- 오디오 -->
   <audio id="audio-kr" src="Ihee Lab(kor).mp3"></audio>
   <audio id="audio-en" src="Ihee Lab(eng).mp3"></audio>
 
